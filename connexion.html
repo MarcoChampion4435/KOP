@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue chez KOP !</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #90EE90; /* Vert pomme clair */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .welcome-title {
+            position: absolute;
+            top: 25%;
+            transform: translateY(-50%);
+            color: #333;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Largeur fixe pour le conteneur */
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center; /* Centre le texte */
+        }
+        .login-container input,
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Assure que la largeur inclut le padding et la bordure */
+        }
+        .login-container button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="welcome-title">Bienvenue chez KOP !</h1>
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form>
+            <input type="email" placeholder="Email utilisateur" required>
+            <input type="password" placeholder="Mot de passe" required>
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+</body>
+</html>
