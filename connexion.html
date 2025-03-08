@@ -58,12 +58,37 @@
 <body>
     <h1 class="welcome-title">Bienvenue chez KOP !</h1>
     <div class="login-container">
-        <h2>Connexion</h2>
-        <form>
-            <input type="email" placeholder="Email utilisateur" required>
-            <input type="password" placeholder="Mot de passe" required>
+        <form id="loginForm" aria-labelledby="loginFormTitle">
+            <h2 id="loginFormTitle">Connexion</h2>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" aria-required="true" required>
+            <br>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" aria-required="true" required>
+            <br>
             <button type="submit">Se connecter</button>
         </form>
     </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            fetch('users.json')
+                .then(response => response.json())
+                .then(users => {
+                    const user = users.find(u => u.email === email && u.password === password);
+                    if (user) {
+                        window.location.href = 'accueil.html';
+                    } else {
+                        document.getElementById('error').textContent = 'Email ou mot de passe incorrect.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération des utilisateurs:', error);
+                });
+        });
+    </script>
 </body>
 </html>
