@@ -1,0 +1,387 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #D1E7DD; /* Shade of green */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; /* Inherit box-sizing from body */
+}
+
+.main-container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 450px;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Added margin at bottom for small screens */
+}
+
+h1 {
+    color: #2E7D32;
+    font-size: 2.2em; /* Slightly reduced for better general fit */
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 1.0em; /* Slightly reduced for better general fit */
+    margin-bottom: 25px; /* Slightly reduced */
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure form takes up container width for input sizing */
+}
+
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+    width: 100%; /* Inputs take full width of the form */
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#loginForm button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make button full width of form */
+}
+
+#loginForm button[type="submit"]:hover {
+    background-color: #388E3C;
+}
+
+#errorMessage {
+    color: red;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+#dynamicIllustrationsPlaceholder {
+    width: 80%;
+    max-width: 300px;
+    height: 150px;
+    margin: 25px auto;
+    border: 2px dashed #4CAF50;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #555;
+    font-style: italic;
+}
+#dynamicIllustrationsPlaceholder::before {
+    content: "Espace pour illustrations dynamiques";
+}
+
+#bottomRightInfo {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: right;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+#dateTimeDisplay {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#weatherDisplay {
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* === Styles for home.html === */
+body.page-with-header {
+    justify-content: flex-start;
+}
+
+header {
+    background-color: #A5D6A7;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-info-header-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+#userNameDisplay.user-button {
+    background-color: white;
+    color: black;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: default;
+    font-weight: bold;
+    margin-bottom: 5px; /* Add margin for stacking */
+}
+
+#logoutButton {
+    padding: 8px 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px; /* Add margin for stacking */
+}
+
+#logoutButton:hover {
+    background-color: #d32f2f;
+}
+
+.main-content-area {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+#userInfoDetails {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #E8F5E9;
+    border-left: 5px solid #66BB6A;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#userInfoDetails p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+
+/* === Responsive Adjustments === */
+
+/* Base adjustments from previous query (max-width: 600px) integrated and refined */
+
+/* For Tablets and larger phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px 30px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 2.0em;
+    }
+
+    p {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+    }
+
+    #loginForm input[type="email"],
+    #loginForm input[type="password"],
+    #loginForm button[type="submit"] {
+        font-size: 0.95em;
+        padding: 11px;
+    }
+
+    #loginForm button[type="submit"] {
+        padding: 11px 20px;
+    }
+
+    #dynamicIllustrationsPlaceholder {
+        height: 120px;
+        margin: 20px auto;
+    }
+
+    #bottomRightInfo {
+        padding: 8px 12px;
+        bottom: 5px;
+        right: 5px;
+    }
+    #dateTimeDisplay, #weatherDisplay {
+        font-size: 0.8em;
+    }
+
+    /* Home Page Header */
+    .user-info-header-container {
+        justify-content: center; /* Center items if they stack */
+    }
+    #userNameDisplay.user-button, #logoutButton {
+        margin-right: 5px; /* Reduce margin */
+        margin-left: 5px;  /* Add some margin if they are side-by-side */
+        font-size: 0.85em; /* Reduce font size */
+        padding: 7px 12px; /* Adjust padding */
+    }
+
+    .main-content-area h1 { /* Target h1 within home page content */
+        font-size: 1.8em;
+    }
+    .main-content-area p { /* Target p within home page content */
+        font-size: 0.9em;
+    }
+}
+
+
+/* For Small mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 0 5px; /* Add slight padding to body to prevent content touching edges */
+    }
+    .main-container {
+        padding: 15px 20px;
+        max-width: 95%; /* Allow container to be wider */
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 1.6em; /* Further reduce H1 */
+    }
+
+    p {
+        font-size: 0.85em; /* Further reduce p */
+        margin-bottom: 15px;
+    }
+
+    #loginForm input[type="email"],
+    #loginForm input[type="password"],
+    #loginForm button[type="submit"] {
+        font-size: 0.9em; /* Keep readable */
+        padding: 10px;
+    }
+
+    #dynamicIllustrationsPlaceholder {
+        /* display: none; */ /* Option to hide if too intrusive */
+        height: 100px;
+        margin: 15px auto;
+    }
+    #dynamicIllustrationsPlaceholder::before {
+        font-size: 0.9em; /* Make placeholder text smaller */
+    }
+
+
+    #bottomRightInfo {
+        position: relative; /* Change from fixed to flow with content */
+        width: 100%;
+        bottom: auto;
+        right: auto;
+        text-align: center;
+        margin-top: 15px;
+        padding: 10px 0;
+        background-color: transparent; /* May want to make it less prominent */
+        box-shadow: none;
+    }
+    #dateTimeDisplay, #weatherDisplay {
+        font-size: 0.75em;
+        margin-bottom: 3px;
+    }
+    #dateTimeDisplay {
+        margin-bottom: 5px; /* Stack them */
+    }
+
+    /* Home Page Header */
+    header {
+        padding: 10px;
+    }
+    .user-info-header-container {
+        flex-direction: column; /* Stack user info and logout button */
+        align-items: center; /* Center items when stacked */
+    }
+    #userNameDisplay.user-button {
+        margin-right: 0; /* Remove right margin when stacked */
+        margin-bottom: 8px; /* Add bottom margin when stacked */
+        width: 80%; /* Make them wider for easier touch */
+        text-align: center;
+    }
+    #logoutButton {
+        width: 80%; /* Make them wider for easier touch */
+        text-align: center;
+    }
+
+    .main-content-area {
+        padding: 15px;
+    }
+    .main-content-area h1 {
+        font-size: 1.6em;
+    }
+    .main-content-area p {
+        font-size: 0.85em;
+    }
+    #userInfoDetails {
+        padding: 15px;
+    }
+    #userInfoDetails p {
+        font-size: 0.85em;
+    }
+}
+
+/* Existing media query at 600px - these rules have been merged or adjusted
+   into the 768px and 480px queries for more structured breakpoints.
+   If any specific 600px rules are still needed, they can be re-added,
+   but it's generally better to have fewer, well-defined breakpoints.
+*/
+/*
+@media (max-width: 600px) {
+    .main-container {
+        margin-top: 10px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    #loginForm input[type="email"],
+    #loginForm input[type="password"],
+    #loginForm button[type="submit"] {
+        font-size: 0.9em;
+    }
+    #dynamicIllustrationsPlaceholder {
+        height: 120px;
+    }
+    #bottomRightInfo {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+}
+*/

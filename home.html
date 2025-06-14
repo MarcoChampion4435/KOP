@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - KOP</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Specific styles for home.html can be added here or in style.css -->
+</head>
+<body class="page-with-header">
+    <header>
+        <div class="user-info-header-container"> <!-- Renamed for clarity -->
+            <span id="userNameDisplay" class="user-button"></span>
+            <button id="logoutButton">Déconnexion</button>
+        </div>
+    </header>
+
+    <div class="main-content-area"> <!-- Wrapper for main content -->
+        <h1>Bienvenue sur King Of Potager!</h1>
+        <p>Votre espace personnalisé pour gérer votre potager.</p>
+        <div id="userInfoDetails">
+            <!-- Detailed user info can be loaded here if needed,
+                 otherwise, the header primarily shows the name -->
+        </div>
+    </div>
+
+    <script src="home_script.js" defer></script>
+</body>
+</html>

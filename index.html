@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - KOP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Bienvenue chez KOP</h1>
+        <p>Prêt pour être un King Of Potager ?</p>
+
+        <form id="loginForm">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit">Connexion</button>
+        </form>
+
+        <div id="errorMessage"></div>
+        <div id="dynamicIllustrationsPlaceholder"></div>
+
+    </div>
+
+    <div id="bottomRightInfo">
+        <div id="dateTimeDisplay"></div>
+        <div id="weatherDisplay"></div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
