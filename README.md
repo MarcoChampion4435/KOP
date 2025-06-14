@@ -1,1 +1,1 @@
-# KOP
+Pour descendre des fichiers du dépôt distant : git clone https://github.com/MarcoChampion4435/KOP.git
