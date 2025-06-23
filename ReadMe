@@ -1,0 +1,5 @@
+Commande pour descendre un repo :
+git clone https://github.com/MarcoChampion4435/KOP.git
+
+Commande pour mettre à jour son dépot local :
+git pull
