@@ -1,0 +1,286 @@
+/* Variables CSS pour les couleurs */
+:root {
+    --primary-green: #2d7016;
+    --secondary-green: #4a9c2d;
+    --light-green: #7bc142;
+    --bg-green: #f0f8e8;
+    --dark-green: #1a4d0f;
+    --white: #ffffff;
+    --error-red: #dc3545;
+    --text-dark: #333333;
+    --border-color: #ddd;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-green);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header-content h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+/* Header de la page d'accueil */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.home-header h1 {
+    margin-bottom: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    color: var(--text-dark);
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-profile:hover {
+    background-color: #f8f9fa;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.user-info {
+    font-weight: bold;
+}
+
+.logout-btn {
+    background-color: var(--white);
+    color: var(--primary-green);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #f8f9fa;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.login-form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-green);
+    font-size: 1.8em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--secondary-green);
+}
+
+.login-btn {
+    width: 100%;
+    background-color: var(--secondary-green);
+    color: var(--white);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+.login-btn:hover {
+    background-color: var(--primary-green);
+}
+
+.error-message {
+    color: var(--error-red);
+    text-align: center;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+/* Home Container */
+.home-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.home-container h2 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.home-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+#bitcoinPrice, #weather {
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.weather-icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2em;
+    }
+    
+    .home-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .home-header h1 {
+        text-align: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-left, .footer-right {
+        text-align: center;
+    }
+    
+    .login-form {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+}

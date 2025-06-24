@@ -1,7 +1,12 @@
 Run 1 :
 Je souhaite créer un site internet qui a pour objectif de collecter et d'analyser des données de potager.
-Je souhaite coder 2 pages (page de connexion + page d'accueil) + 1 base de données.
-Les 2 pages doivent avoir en commun : un footer, des couleurs et une ambiance générale.
+Structure souhaitée :
+1 page html de connexion.
+1 page html d'accueil
+Le CSS et le JS dans des fichiers à part.
+Un dossier Database contenant un fichier .json servant de base de donnée de connexion. A termes il y aura d'autres fichiers .json dans ce dossier.
+
+Les 2 pages html doivent avoir en commun : un footer, des couleurs et une ambiance générale.
 Il y aura un header sur les 2 pages qui aura les mêmes dimensions et les mêmes couleurs, mais un texte différent.
 La couleur dominante doit être le vert. Le header et le footer doivent être plus foncés que le retse de la page.
 
@@ -27,6 +32,7 @@ Si l'utilisateur commet une erreur, un message d'erreur rouge s'affichera sous l
 Les données de connexion seront stockées dans un fichier .json que tu va créer.
 Tu vas créé 2 utilisateurs, et prévois les champs suivants : email, nom, prénom, mot de passe.
 Une photo de profil sera associée aux utilisateurs. Pour le moment, tu va affecter à chaque utilisateur un avatar, qui devra s'afficher dans le header dela page d'accueil lorsque l'utilisateur sera connecté.
+Les avatars seront des images enregistrées dans le projet.
 
 Voici le contenu de la page d'accueil :
-La page d'accueil reste à contruire, je ne te donne pas d'instructions pour le moment.
+La page d'accueil reste à construire, je ne te donne pas d'instructions pour le moment.
