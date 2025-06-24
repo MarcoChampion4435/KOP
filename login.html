@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOP - Connexion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left"></div>
+            <div class="header-center">
+                <h1>Bienvenue chez KOP</h1>
+                <h2>King Of Potager</h2>
+            </div>
+            <div class="header-right"></div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="login-container">
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe :</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" required>
+                        <button type="button" class="password-toggle" id="passwordToggle">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">Connexion</button>
+                
+                <div class="error-message" id="errorMessage">
+                    Email ou mot de passe incorrect.
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="bitcoin-info">
+                    <div class="bitcoin-icon">₿</div>
+                    <div class="bitcoin-price" id="bitcoinPrice">Chargement...</div>
+                </div>
+            </div>
+            
+            <div class="footer-center">
+                <div class="copyright">Propriété de Marc-Antoine Brohan</div>
+            </div>
+            
+            <div class="footer-right">
+                <div class="weather-info">
+                    <div class="weather-icon" id="weatherIcon">🌤️</div>
+                    <div class="weather-temp" id="weatherTemp">Chargement...</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
