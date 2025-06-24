@@ -1,0 +1,32 @@
+Run 1 :
+Je souhaite créer un site internet qui a pour objectif de collecter et d'analyser des données de potager.
+Je souhaite coder 2 pages (page de connexion + page d'accueil) + 1 base de données.
+Les 2 pages doivent avoir en commun : un footer, des couleurs et une ambiance générale.
+Il y aura un header sur les 2 pages qui aura les mêmes dimensions et les mêmes couleurs, mais un texte différent.
+La couleur dominante doit être le vert. Le header et le footer doivent être plus foncés que le retse de la page.
+
+Voici le contenu du footer : 
+A droite, le footer doit afficher la météo instantannée, avec un logo (exemple : soleil, pluie, nuage...) et la température instantannée.
+Les données météo doivent être celles de la ville d'Ingrandes (49123).
+Cette météo doit être instantannée, donc elle évolue chaque fois que la météo évolue. 
+Au centre du footer, il doit y avoir ce texte : "Propriété de Marc-Antoine Brohan"
+A gauche, le footer doit afficher le cours du bitcoin vs €, cette valeur doit être la valeur instantannée, donc elle évolue chaque fois que le cours évolue.
+
+Voici le contenu des headers :
+Pour la page de connexion, le header doit comprendre le titre suivant au centre : "Bienvenue chez KOP".
+Sous ce titre, le sous-titre suivant : "King Of Potager"
+Pour la page d'accueil, le header doit comprendre le titre suivant : "King Of Potager"
+A droite, le header doit comprendre un bouton Déconnexion. Tu prévois cette fonction de déconnexion.
+A gauche, le header doit comprendre un bouton blanc avec le prénom, le nom et la photo de la personne qui est connectée.
+Plus tard ce bouton sera cliquable et renverra vers une autre page, mais ce n'est pas encore le cas.
+
+Voici le contenu de la page de connexion :
+La page connexion doit comprendre un formulaire de connexion.
+Ce formulaire demandera à l'utilisateur : un email + un mot de passe.
+Si l'utilisateur commet une erreur, un message d'erreur rouge s'affichera sous le bouton "Connexion".
+Les données de connexion seront stockées dans un fichier .json que tu va créer.
+Tu vas créé 2 utilisateurs, et prévois les champs suivants : email, nom, prénom, mot de passe.
+Une photo de profil sera associée aux utilisateurs. Pour le moment, tu va affecter à chaque utilisateur un avatar, qui devra s'afficher dans le header dela page d'accueil lorsque l'utilisateur sera connecté.
+
+Voici le contenu de la page d'accueil :
+La page d'accueil reste à contruire, je ne te donne pas d'instructions pour le moment.
