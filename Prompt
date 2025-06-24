@@ -29,6 +29,7 @@ Voici le contenu de la page de connexion :
 La page connexion doit comprendre un formulaire de connexion.
 Ce formulaire demandera à l'utilisateur : un email + un mot de passe.
 Si l'utilisateur commet une erreur, un message d'erreur rouge s'affichera sous le bouton "Connexion".
+Je souhaite avec un bouton permettant de visualiser le mot de passe, qui par défaut est masqué.
 Les données de connexion seront stockées dans un fichier .json que tu va créer.
 Tu vas créé 2 utilisateurs, et prévois les champs suivants : email, nom, prénom, mot de passe.
 Une photo de profil sera associée aux utilisateurs. Pour le moment, tu va affecter à chaque utilisateur un avatar, qui devra s'afficher dans le header dela page d'accueil lorsque l'utilisateur sera connecté.
