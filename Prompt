@@ -37,3 +37,12 @@ Les avatars seront des images enregistrées dans le projet.
 
 Voici le contenu de la page d'accueil :
 La page d'accueil reste à construire, je ne te donne pas d'instructions pour le moment.
+
+Mise au point 1 :
+Voici une partie du code de mon site internet.
+Je souhaite que tu procèdes aux mises aux point suivantes :
+Premièrement, tu vas modifier le header de la page index.html. Je souhaite que les 2 boutons "Déconnexion" et "Profil" soient plus proches du bord de la page.
+Deuxièmement, tu vas modifier le footer qui est commun aux 2 pages html. Les 2 infos (cours du bitcoin et météo) doivent être plus proches du bord de la page. Prends les mêmes marges que pour les boutons du header de la page index.html.
+Pour la météo, tu vas préciser "Ingrandes (49123)" à droite de l'affichage de la température.
+Pour le cours du bitcoin, 
+Troixièmement, tu vas rendre les 2 pages html responsive. Je veux pouvoir consulter mon site sur un pc, une tablette et un smartphone.
