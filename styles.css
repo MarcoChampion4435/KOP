@@ -25,12 +25,13 @@ body {
 }
 
 .header-content {
-    max-width: 1200px;
+    max-width: none; /* Supprime la limitation de largeur */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 2cm; /* Padding de 2cm sur les côtés */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .header-center {
@@ -52,6 +53,22 @@ body {
 
 .header-left, .header-right {
     min-width: 150px;
+    position: relative;
+}
+
+/* Positionnement absolu pour coller aux bords */
+.header-left {
+    position: absolute;
+    left: 2cm;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-right {
+    position: absolute;
+    right: 2cm;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .user-profile {
@@ -202,15 +219,17 @@ body {
     color: white;
     padding: 20px 0;
     margin-top: auto;
+    position: relative;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: none; /* Supprime la limitation de largeur */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 2cm; /* Padding de 2cm sur les côtés */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .footer-left, .footer-center, .footer-right {
@@ -219,10 +238,18 @@ body {
 }
 
 .footer-left {
+    position: absolute;
+    left: 2cm;
+    top: 50%;
+    transform: translateY(-50%);
     text-align: left;
 }
 
 .footer-right {
+    position: absolute;
+    right: 2cm;
+    top: 50%;
+    transform: translateY(-50%);
     text-align: right;
 }
 
@@ -264,21 +291,32 @@ body {
 /* Responsive design */
 @media (max-width: 768px) {
     .header-content {
+        padding: 0 20px; /* Réduit le padding sur mobile */
+        position: relative;
+    }
+    
+    .header-left, .header-right {
+        position: static; /* Retire le positionnement absolu sur mobile */
+        transform: none;
+        min-width: auto;
+    }
+    
+    .header-content {
         flex-direction: column;
         gap: 15px;
     }
     
-    .header-left, .header-right {
-        min-width: auto;
-    }
-    
     .footer-content {
+        padding: 0 20px; /* Réduit le padding sur mobile */
+        position: relative;
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
     
     .footer-left, .footer-right {
+        position: static; /* Retire le positionnement absolu sur mobile */
+        transform: none;
         text-align: center;
     }
     
@@ -336,4 +374,3 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
