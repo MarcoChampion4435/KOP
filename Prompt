@@ -44,6 +44,7 @@ Je souhaite que tu procèdes aux mises aux point suivantes :
 Tu vas modifier le header de la page index.html. Je souhaite que les 2 boutons "Déconnexion" et "Profil" soient plus proches du bord de la page.
 
 Run 2 :
+Partie 1 :
 Je souhaite créer un site internet qui a pour objectif de collecter et d'analyser des données de potager.
 J'ai déjà créé 2 pages :
 - Page de connexion (login.html)
@@ -55,6 +56,9 @@ Je souhaite désormais creer une page où l'utilisateur va pourvoir renseigner e
 Tu nommera cette page profil.html .
 Cette page sera accessible pour l'utilisateur, depuis la page index.html, en cliquant, dans le header, sur le bouton blanc présent qui affiche son nom et son prénom.
 Cette page profil.html reprendra le même header et footer que les 2 autres pages html.
+Nous verrons le contenu de cette page profil.html plus tard.
+
+Partie 2 :
 Dans le contenu de cette page profil.html, je souhaite un formulaire avec les champs suivants :
 - nom
 - prénom
