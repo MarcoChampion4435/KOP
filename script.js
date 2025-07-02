@@ -294,3 +294,216 @@ window.addEventListener('unhandledrejection', (event) => {
     console.error('Promesse rejetée non gérée:', event.reason);
     event.preventDefault();
 });
+// Ajoutez cette classe ProfileManager à votre fichier script.js existant
+
+// Gestion du profil utilisateur
+class ProfileManager {
+    constructor(authManager) {
+        this.authManager = authManager;
+        this.initializeProfile();
+    }
+
+    initializeProfile() {
+        // Vérifier si on est sur la page profil
+        if (!window.location.pathname.includes('profil.html')) {
+            return;
+        }
+
+        // Initialiser le formulaire
+        this.initializeForm();
+        
+        // Charger les données utilisateur
+        this.loadUserData();
+    }
+
+    initializeForm() {
+        // Gestion du formulaire de profil
+        const profileForm = document.getElementById('profileForm');
+        if (profileForm) {
+            profileForm.addEventListener('submit', (e) => this.handleSubmit(e));
+        }
+
+        // Gestion de l'upload de photo
+        const uploadBtn = document.getElementById('uploadBtn');
+        const photoInput = document.getElementById('photoInput');
+        
+        if (uploadBtn && photoInput) {
+            uploadBtn.addEventListener('click', () => photoInput.click());
+            photoInput.addEventListener('change', (e) => this.handlePhotoUpload(e));
+        }
+    }
+
+    loadUserData() {
+        const currentUser = this.authManager.getCurrentUser();
+        if (currentUser) {
+            // Remplir les champs du formulaire
+            const nomInput = document.getElementById('nom');
+            const prenomInput = document.getElementById('prenom');
+            const profilePhoto = document.getElementById('profilePhoto');
+
+            if (nomInput) nomInput.value = currentUser.nom || '';
+            if (prenomInput) prenomInput.value = currentUser.prénom || '';
+            
+            if (profilePhoto) {
+                profilePhoto.src = currentUser.avatar ? `assets/${currentUser.avatar}` : 'assets/default-avatar.png';
+                profilePhoto.alt = `Photo de profil de ${currentUser.prénom || 'Utilisateur'}`;
+            }
+        }
+    }
+
+    handlePhotoUpload(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        // Vérifier le type de fichier
+        if (!file.type.startsWith('image/')) {
+            this.showError('Veuillez sélectionner un fichier image valide.');
+            return;
+        }
+
+        // Vérifier la taille (max 2MB)
+        if (file.size > 2 * 1024 * 1024) {
+            this.showError('La taille de l\'image ne doit pas dépasser 2MB.');
+            return;
+        }
+
+        // Prévisualiser l'image
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const profilePhoto = document.getElementById('profilePhoto');
+            if (profilePhoto) {
+                profilePhoto.src = e.target.result;
+                profilePhoto.classList.add('loading');
+                
+                // Simuler un délai de chargement
+                setTimeout(() => {
+                    profilePhoto.classList.remove('loading');
+                }, 500);
+            }
+        };
+        reader.readAsDataURL(file);
+    }
+
+    async handleSubmit(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const nom = formData.get('nom').trim();
+        const prenom = formData.get('prenom').trim();
+        
+        // Validation
+        if (!nom || !prenom) {
+            this.showError('Veuillez remplir tous les champs obligatoires.');
+            return;
+        }
+
+        // Validation de la longueur
+        if (nom.length > 50 || prenom.length > 50) {
+            this.showError('Le nom et le prénom ne doivent pas dépasser 50 caractères.');
+            return;
+        }
+
+        // Mettre à jour les données utilisateur
+        const currentUser = this.authManager.getCurrentUser();
+        if (currentUser) {
+            currentUser.nom = nom;
+            currentUser.prénom = prenom;
+            
+            // Mettre à jour localStorage
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            
+            // Mettre à jour l'affichage dans le header
+            this.updateHeaderUserInfo(currentUser);
+            
+            // Afficher le message de succès
+            this.showSuccess();
+        }
+    }
+
+    updateHeaderUserInfo(user) {
+        const userName = document.getElementById('userName');
+        const userAvatar = document.getElementById('userAvatar');
+        
+        if (userName) {
+            userName.textContent = `${user.prénom} ${user.nom}`;
+        }
+        
+        if (userAvatar) {
+            userAvatar.alt = `Avatar de ${user.prénom}`;
+        }
+    }
+
+    showSuccess() {
+        const successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+            successMessage.style.display = 'block';
+            
+            // Masquer automatiquement après 3 secondes
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        }
+    }
+
+    showError(message) {
+        // Créer ou afficher un message d'erreur
+        let errorElement = document.getElementById('profileErrorMessage');
+        
+        if (!errorElement) {
+            errorElement = document.createElement('div');
+            errorElement.id = 'profileErrorMessage';
+            errorElement.className = 'error-message';
+            errorElement.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #f8d7da;
+                color: #721c24;
+                padding: 15px 20px;
+                border-radius: 8px;
+                border: 1px solid #f5c6cb;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                z-index: 1000;
+                animation: slideIn 0.3s ease-out;
+            `;
+            document.body.appendChild(errorElement);
+        }
+        
+        errorElement.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="background: #dc3545; color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;">!</span>
+                <span>${message}</span>
+            </div>
+        `;
+        errorElement.style.display = 'block';
+        
+        // Masquer automatiquement après 5 secondes
+        setTimeout(() => {
+            if (errorElement) {
+                errorElement.style.display = 'none';
+            }
+        }, 5000);
+    }
+}
+
+// Modifier la classe UIManager existante pour inclure la gestion du profil
+// Ajoutez cette méthode à votre classe UIManager existante :
+
+// Dans la méthode initializeUI() de UIManager, ajoutez cette ligne :
+// this.profileManager = new ProfileManager(this.authManager);
+
+// Ou ajoutez cette fonction dans l'initialisation de l'application :
+
+// Mise à jour de l'initialisation de l'application
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialisation des gestionnaires
+    const authManager = new AuthManager();
+    const weatherManager = new WeatherManager();
+    const bitcoinManager = new BitcoinManager();
+    const uiManager = new UIManager(authManager);
+    
+    // Initialisation du gestionnaire de profil
+    const profileManager = new ProfileManager(authManager);
+    
+    console.log('Application KOP initialisée');
+});

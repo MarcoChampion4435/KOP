@@ -29,15 +29,48 @@
     </header>
 
     <main class="main-content">
-        <div style="text-align: center; padding: 50px 20px;">
-            <h2 style="color: #2d5016; margin-bottom: 20px;">Profil utilisateur</h2>
-            <p style="color: #4a7c59; font-size: 18px;">
-                Cette page de profil sera développée prochainement pour permettre la modification des informations personnelles.
-            </p>
-            <div style="margin-top: 30px;">
-                <button onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #4a7c59, #2d5016); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.3s ease;">
-                    Retour à l'accueil
-                </button>
+        <div class="profile-container">
+            <h2 class="profile-title">Mon Profil</h2>
+            
+            <form class="profile-form" id="profileForm">
+                <div class="profile-photo-section">
+                    <div class="current-photo">
+                        <img src="" alt="Photo de profil" class="profile-photo" id="profilePhoto">
+                    </div>
+                    <div class="photo-upload">
+                        <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                        <button type="button" class="upload-btn" id="uploadBtn">Changer la photo</button>
+                        <p class="photo-hint">JPG, PNG ou GIF - Maximum 2MB</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required maxlength="50">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required maxlength="50">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="window.location.href='index.html'">
+                        Annuler
+                    </button>
+                    <button type="submit" class="save-btn">
+                        Sauvegarder
+                    </button>
+                </div>
+            </form>
+
+            <div class="success-message" id="successMessage" style="display: none;">
+                <div class="success-content">
+                    <span class="success-icon">✓</span>
+                    <span>Profil mis à jour avec succès !</span>
+                </div>
             </div>
         </div>
     </main>

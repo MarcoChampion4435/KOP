@@ -59,11 +59,28 @@ Cette page profil.html reprendra le même header et footer que les 2 autres page
 Nous verrons le contenu de cette page profil.html plus tard.
 
 Partie 2 :
-Dans le contenu de cette page profil.html, je souhaite un formulaire avec les champs suivants :
+Je souhaite créer un site internet qui a pour objectif de collecter et d'analyser des données de potager.
+J'ai déjà créé 2 pages :
+- Page de connexion (login.html)
+- Page de travail (index.html)
+- Une base de donnée contenant les identifiants de connexion.
+- Un fichier pour le CSS et un fichier pour le JS. Je souhaite que tout le CSS et tout le JS restent dans ces fichiers.
+
+Dans le contenu de cette page profil.html, je souhaite ajouter un formulaire avec les champs suivants :
 - nom
 - prénom
 - photo de profil
-Concernant la photo profil, je souhaite que l'utilisateur ait 3 choix possibles :
+Nous verrons le reste du contenu de cette page profil.html plus tard.
+
+Partie 3 :
+Je souhaite créer un site internet qui a pour objectif de collecter et d'analyser des données de potager.
+J'ai déjà créé 2 pages :
+- Page de connexion (login.html)
+- Page de travail (index.html)
+- Une base de donnée contenant les identifiants de connexion.
+- Un fichier pour le CSS et un fichier pour le JS. Je souhaite que tout le CSS et tout le JS restent dans ces fichiers.
+
+Dans le contenu de cette page profil.html, je souhaite que concernant la photo profil, l'utilisateur ai 3 choix possibles :
 - Choisir un avatar, et tu vas en proposer 5.
 - Importer une photo.
 - Prendre une photo avec la webcam du pc.
