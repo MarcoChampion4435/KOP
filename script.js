@@ -66,10 +66,11 @@ class AuthManager {
         // Redirection selon l'état d'authentification
         const isLoginPage = window.location.pathname.includes('login.html');
         const isIndexPage = window.location.pathname.includes('index.html') || window.location.pathname === '/';
+        const isProfilPage = window.location.pathname.includes('profil.html');
 
         if (this.currentUser && isLoginPage) {
             window.location.href = 'index.html';
-        } else if (!this.currentUser && isIndexPage) {
+        } else if (!this.currentUser && (isIndexPage || isProfilPage)) {
             window.location.href = 'login.html';
         }
     }
@@ -205,7 +206,14 @@ class UIManager {
             passwordToggle.addEventListener('click', () => this.togglePassword());
         }
 
-        // Affichage des informations utilisateur sur la page d'accueil
+        // Gestion du clic sur le profil utilisateur pour naviguer vers la page profil
+        const userProfile = document.getElementById('userProfile');
+        if (userProfile) {
+            userProfile.addEventListener('click', () => this.navigateToProfile());
+            userProfile.style.cursor = 'pointer'; // Ajoute le curseur pointer pour indiquer que c'est cliquable
+        }
+
+        // Affichage des informations utilisateur
         this.displayUserInfo();
     }
 
@@ -237,6 +245,13 @@ class UIManager {
         } else {
             passwordInput.type = 'password';
             passwordToggle.textContent = '👁️';
+        }
+    }
+
+    navigateToProfile() {
+        // Navigue vers la page profil uniquement si on n'est pas déjà sur la page profil
+        if (!window.location.pathname.includes('profil.html')) {
+            window.location.href = 'profil.html';
         }
     }
 
@@ -279,4 +294,3 @@ window.addEventListener('unhandledrejection', (event) => {
     console.error('Promesse rejetée non gérée:', event.reason);
     event.preventDefault();
 });
-

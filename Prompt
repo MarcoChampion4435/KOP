@@ -50,7 +50,7 @@ J'ai déjà créé 2 pages :
 - Page de connexion (login.html)
 - Page de travail (index.html)
 - Une base de donnée contenant les identifiants de connexion.
-- Un fichier pour le CSS et un fichier pour le JS.
+- Un fichier pour le CSS et un fichier pour le JS. Je souhaite que tout le CSS et tout le JS restent dans ces fichiers.
 
 Je souhaite désormais creer une page où l'utilisateur va pourvoir renseigner et modifier ses informations personnelles.
 Tu nommera cette page profil.html .
