@@ -73,12 +73,6 @@ Dans le contenu de cette page profil.html, je souhaite ajouter un formulaire ave
 Nous verrons le reste du contenu de cette page profil.html plus tard.
 
 Partie 3 :
-Je souhaite créer un site internet qui a pour objectif de collecter et d'analyser des données de potager.
-J'ai déjà créé 2 pages :
-- Page de connexion (login.html)
-- Page de travail (index.html)
-- Une base de donnée contenant les identifiants de connexion.
-- Un fichier pour le CSS et un fichier pour le JS. Je souhaite que tout le CSS et tout le JS restent dans ces fichiers.
 Dans le contenu de cette page profil.html, l'utilisateur peut actuellement modifier les champs :
 - Nom
 - Prénom
@@ -86,18 +80,8 @@ Ma base de donnée étant le fichier users.json, je souhaite que toute modificat
 Peux-tu vérifier ce point ? Et éventuellement faire les modifications nécessaires ?
 
 Partie 4 :
-Je souhaite créer un site internet qui a pour objectif de collecter et d'analyser des données de potager.
-J'ai déjà créé 2 pages :
-- Page de connexion (login.html)
-- Page de travail (index.html)
-- Une base de donnée contenant les identifiants de connexion.
-- Un fichier pour le CSS et un fichier pour le JS. Je souhaite que tout le CSS et tout le JS restent dans ces fichiers.
-
 Dans le contenu de cette page profil.html, je souhaite que concernant la photo profil, l'utilisateur ai 3 choix possibles :
 - Choisir un avatar, et tu vas en proposer 5.
 - Importer une photo.
 - Prendre une photo avec la webcam du pc.
-Un bouton "Sauvegarder" doit être présent en bas du formulaire.
-Si un des 3 champs n'est pas renseigné, un message d'erreur doit s'afficher, et il ne doit pas être possible pour l'utilisateur de quitter la page.
-Ces informations doivent être stockées dans le fichier users.json.
 Concernant le stockage de la photo de profil, utilise le dossier assets.

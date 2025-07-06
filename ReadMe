@@ -1,2 +1,11 @@
-Commande pour descendre un repo :
+Comment descendre un repository ?
 git clone https://github.com/MarcoChampion4435/KOP.git
+
+Comment lancer Gemini cli ?
+1 - Ouvrir le terminal dans le projet.
+2 - Lancer la commande : gemini
+
+Comment lancer le serveur ?
+1 - Ouvrir le terminal dans le projet.
+2 - Lancer la commande : npm start
+3 - Se rendre sur : http://localhost:3000/login.html

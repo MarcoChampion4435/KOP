@@ -1,17 +1,16 @@
 [
-  {
-    "email": "user1@example.com",
-    "nom": "Doe",
-    "prénom": "John",
-    "mot_de_passe": "password123",
-    "avatar": "avatar1.png"
-  },
-  {
-    "email": "user2@example.com",
-    "nom": "Smith",
-    "prénom": "Jane",
-    "mot_de_passe": "securepass",
-    "avatar": "avatar2.png"
-  }
+    {
+        "email": "user1@example.com",
+        "nom": "Doe",
+        "prénom": "John",
+        "mot_de_passe": "password123",
+        "avatar": "avatar1.png"
+    },
+    {
+        "email": "user2@example.com",
+        "nom": "Brohan",
+        "prénom": "Marc-Antoine",
+        "mot_de_passe": "securepass",
+        "avatar": "avatar2.png"
+    }
 ]
-

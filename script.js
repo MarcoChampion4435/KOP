@@ -387,9 +387,11 @@ class ProfileManager {
     async handleSubmit(event) {
         event.preventDefault();
         
-        const formData = new FormData(event.target);
-        const nom = formData.get('nom').trim();
-        const prenom = formData.get('prenom').trim();
+        const nomInput = document.getElementById('nom');
+        const prenomInput = document.getElementById('prenom');
+
+        const nom = nomInput.value.trim();
+        const prenom = prenomInput.value.trim();
         
         // Validation
         if (!nom || !prenom) {
@@ -397,26 +399,54 @@ class ProfileManager {
             return;
         }
 
-        // Validation de la longueur
         if (nom.length > 50 || prenom.length > 50) {
             this.showError('Le nom et le prénom ne doivent pas dépasser 50 caractères.');
             return;
         }
 
-        // Mettre à jour les données utilisateur
         const currentUser = this.authManager.getCurrentUser();
-        if (currentUser) {
-            currentUser.nom = nom;
-            currentUser.prénom = prenom;
-            
-            // Mettre à jour localStorage
-            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        if (!currentUser) {
+            this.showError('Aucun utilisateur connecté.');
+            return;
+        }
+
+        const updatedData = {
+            email: currentUser.email,
+            nom: nom,
+            prénom: prenom
+        };
+
+        try {
+            const response = await fetch('/api/update-profile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedData),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || 'Une erreur est survenue.');
+            }
+
+            // Mettre à jour l'objet currentUser de l'authManager et le localStorage
+            const updatedUser = result.user;
+            this.authManager.currentUser.nom = updatedUser.nom;
+            this.authManager.currentUser.prénom = updatedUser.prénom;
+            // Note: l'avatar et d'autres infos ne sont pas modifiées ici, donc on garde l'objet existant
+            localStorage.setItem('currentUser', JSON.stringify(this.authManager.currentUser));
             
             // Mettre à jour l'affichage dans le header
-            this.updateHeaderUserInfo(currentUser);
+            this.updateHeaderUserInfo(this.authManager.currentUser);
             
             // Afficher le message de succès
             this.showSuccess();
+
+        } catch (error) {
+            console.error('Erreur lors de la mise à jour du profil:', error);
+            this.showError(error.message || 'La communication avec le serveur a échoué.');
         }
     }
 
